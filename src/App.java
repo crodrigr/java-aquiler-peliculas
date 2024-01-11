@@ -169,7 +169,7 @@ class App {
 
         do {
 
-            System.out.print("Ingrese titulo de la pelicula: ");
+            System.out.print("Ingrese titulo de la pelicula:");
             tituloPelicula = leer.nextLine();
             indexPelicula = buscarPeliculaPorTitulo(tituloPelicula);
             if (indexPelicula != -1)
@@ -179,7 +179,7 @@ class App {
 
         do {
 
-            System.out.print("Ingrese email cliente: ");
+            System.out.print("Ingrese email cliente:");
             emailCliente = leer.nextLine();
             indexPelicula = buscarClientePorEmail(emailCliente);
 
