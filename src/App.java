@@ -52,6 +52,7 @@ class App {
                 default:
                     System.out.println("Listado de alquileres: ");
                     listarAlquileres();
+                    System.out.print("\n");
                     break;
 
             }
@@ -166,7 +167,7 @@ class App {
         String emailCliente = "";
         int indexCliente = 0;
         Cliente clienteAlquiler = null;
-
+        leer.nextLine();
         do {
 
             System.out.print("Ingrese titulo de la pelicula:");
@@ -181,7 +182,7 @@ class App {
 
             System.out.print("Ingrese email cliente:");
             emailCliente = leer.nextLine();
-            indexPelicula = buscarClientePorEmail(emailCliente);
+            indexCliente = buscarClientePorEmail(emailCliente);
 
             if (indexCliente != -1)
                 clienteAlquiler = getCliente(indexCliente);

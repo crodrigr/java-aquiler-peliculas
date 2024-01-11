@@ -54,13 +54,12 @@ public class AlquilerPelicula {
     }
     @Override
     public String toString() {
-        return "AlquilerPelicula{" +
-                "id=" + id +
-                ", fechaHoraInicio=" + fechaHoraInicio +
-                ", fechaHoraEntrega=" + fechaHoraEntrega +
-                ", pelicula=" + pelicula.toString() +
-                ", cliente=" + cliente.toString() +
-                '}';
+        return  "\n-------Alquiler-----"+
+                "\nid=" + id +
+                ", \nfechaHoraInicio=" + fechaHoraInicio +
+                ", \nfechaHoraEntrega=" + fechaHoraEntrega +
+                ", \n-----Pelicula----" + pelicula.toString() +
+                ", \n-----Cliente-----" + cliente.toString(); 
     }
 
     
