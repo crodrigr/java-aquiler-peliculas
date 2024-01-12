@@ -35,6 +35,8 @@ class App {
                     break;
                 case 4:
                     System.out.println("Modificar precio pelicula: ");
+                    modificarPrecioPeliculas();
+                    System.out.println("Termino de modificar precios ");
                     break;
                 case 5:
                     System.out.println("Modificar precio pelicula: ");
@@ -112,6 +114,14 @@ class App {
 
     }
 
+    private static void modificarPrecioPeliculas() {
+
+        for (Pelicula pelicula : peliculas) {
+             pelicula.setPrecio(pelicula.getPrecio()+1000);
+        }
+
+    }
+
     private static Cliente crearCliente() {
         System.out.println("Ingrese los datos del cliente ");
         leer.nextLine();
@@ -162,7 +172,7 @@ class App {
     private static void alquilarPelicula() {
 
         String tituloPelicula = "";
-        int indexPelicula = 0;
+        int indexPelicula=0;
         Pelicula peliculaAquilar = null;
         String emailCliente = "";
         int indexCliente = 0;
@@ -190,15 +200,20 @@ class App {
         } while (indexCliente == -1);
 
         System.out.println("Datos cliente y pelicula que se van alquilar!");
-        peliculaAquilar.toString();
+        System.out.println(peliculaAquilar.toString());
         System.out.print("\n");
-        clienteAlquiler.toString();
+        System.out.println(clienteAlquiler.toString());
+        
 
         LocalDateTime fechaHoraInicio = LocalDateTime.now();
         LocalDateTime fechaHoraEntrega = fechaHoraInicio.plusDays(7);
 
         AlquilerPelicula alquilerPelicula = new AlquilerPelicula(AlquilerPelicula.getNextId(),
-                fechaHoraInicio, fechaHoraEntrega, peliculaAquilar, clienteAlquiler);
+                fechaHoraInicio, fechaHoraEntrega, 
+                new Pelicula(peliculaAquilar.getId(), peliculaAquilar.getTitulo(), peliculaAquilar.getGenero(),peliculaAquilar.getPrecio(),peliculaAquilar.getDirector(),peliculaAquilar.getDescuento())
+                ,clienteAlquiler);
+            
+            
 
         aquileres.add(alquilerPelicula);
 
